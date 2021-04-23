@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: rgba(255, 129, 0, 1);
+	background-image: linear-gradient(
+		90deg,
+		rgba(164, 27, 27, 1) 0%,
+		rgba(255, 129, 0, 1) 100%
+	);
+	overflow-x: hidden;
+}
+
+main {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 4rem 0.5rem;
+}
+
+.header {
+	font-size: 4rem;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 5rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem 0;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 75vh;
+}
+
+#note-textarea {
+	width: 100%;
+	height: 80%;
+	background-color: rgba(255, 255, 255, 0.37);
+	border: 2px solid transparent;
+	padding: 2rem;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	font-family: 'Poppins', sans-serif;
+}
+
+#note-textarea::placeholder {
+	color: rgba(255, 255, 255, 0.9);
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+#note-textarea:hover {
+	border: 2px solid #fff;
+}
+
+#note-textarea:focus {
+	border: 2px solid #fff;
+	background-color: rgba(255, 255, 255, 0.08);
+	outline: none;
+	color: #fff;
+}
+
+.save-btn {
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.87);
+	padding: 1.1rem 2.1rem;
+	font-size: 1.5rem;
+	color: #a41b20;
+	font-weight: 500;
+	margin-top: 2rem;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	z-index: 1;
+	transition: color 250ms ease-in;
+	align-self: center;
+}
+
+.save-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #770404;
+	border-radius: 5px;
+	z-index: -1;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 250ms ease-in;
+}
+
+.save-btn:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.save-btn:hover {
+	color: #fff;
+}
+
+.saved-notes {
+	width: 100%;
+}
+
+.saved-notes h3 {
+	font-size: 2.7rem;
+	font-style: italic;
+	font-weight: 400;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 1.3rem;
+}
+
+.saved-notes ul {
+	list-style: none;
+}
+
+.saved-note-list {
+	margin: 1.3rem 0;
+	transition: all 500ms ease;
+}
+
+.saved-note-list .saved-note {
+	background-color: rgba(255, 255, 255, 0.68);
+	padding: 1rem;
+	border-radius: 6px 6px 0 0;
+}
+
+.note {
+	width: 95%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+.saved-note-list .buttons {
+	background-color: #770404;
+	padding: 0.7rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 0 0 6px 6px;
+}
+
+.view {
+	color: #fff;
+	font-size: 1.6rem;
+	font-weight: 400;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.view:hover {
+	text-decoration: none;
+}
+
+i {
+	color: red;
+	font-size: 2rem;
+	padding-right: 0.7rem;
+	cursor: pointer;
+}
+
+.view-all-notes {
+	text-align: center;
+}
+
+.view-all-notes a {
+	position: relative;
+	color: #fff;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+.view-all-notes a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 250ms ease-in;
+}
+
+.view-all-notes a:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+/* Animation */
+.fall {
+	transform: translateY(8rem) rotateZ(20deg);
+	opacity: 0;
+	pointer-events: none;
+}
