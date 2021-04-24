@@ -122,7 +122,6 @@ main {
 
 .saved-notes h3 {
 	font-size: 2.7rem;
-	font-style: italic;
 	font-weight: 400;
 	color: #fff;
 	text-transform: uppercase;
@@ -142,6 +141,7 @@ main {
 	background-color: rgba(255, 255, 255, 0.68);
 	padding: 2rem 2rem 1.4rem 2rem;
 	border-radius: 6px 6px 0 0;
+	pointer-events: none;
 }
 
 .saved-note {
@@ -181,7 +181,7 @@ main {
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 0 0 6px 6px;
-	z-index: 2;
+	pointer-events: none;
 }
 
 .view {
@@ -190,6 +190,7 @@ main {
 	font-weight: 400;
 	text-decoration: underline;
 	cursor: pointer;
+	pointer-events: all;
 }
 
 .view:hover {
@@ -201,6 +202,7 @@ i {
 	font-size: 2rem;
 	padding-right: 0.7rem;
 	cursor: pointer;
+	pointer-events: all;
 }
 
 .view-all-notes {
@@ -212,6 +214,7 @@ i {
 	color: #fff;
 	font-size: 1.5rem;
 	text-decoration: none;
+	font-style: italic;
 }
 
 .view-all-notes a::after {
@@ -234,22 +237,94 @@ i {
 
 /* Animation */
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 1024px) {
+	main {
+		padding: 3rem 0.5rem;
+	}
 	.header {
-		font-size: 3.2rem;
-		margin-bottom: 3rem;
-		text-align: center;
+		font-size: 3rem;
+		margin-bottom: 2rem;
 	}
 
 	#note-textarea {
-		font-size: 1.2rem;
+		font-size: 1rem;
+	}
+	.save-btn {
+		margin-top: 1rem;
 	}
 
 	.saved-notes h3 {
-		font-size: 2.4rem;
+		font-size: 2rem;
+		margin-top: 3rem;
 	}
 
 	.view-all-notes a {
 		font-size: 1.3rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	#note-textarea {
+		font-size: 0.9rem;
+	}
+
+	.save-btn {
+		padding: 1rem 1.6rem;
+		font-size: 1.1rem;
+	}
+
+	.saved-notes h3 {
+		font-size: 1.6rem;
+		margin-top: 2.5rem;
+	}
+
+	.view-all-notes a {
+		font-size: 1.2rem;
+	}
+
+	.view {
+		font-size: 1.2rem;
+	}
+
+	i {
+		font-size: 1.6rem;
+		padding-right: 1rem;
+	}
+
+	.note {
+		font-size: 1.1rem;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.header {
+		text-align: center;
+	}
+
+	.save-btn {
+		padding: 1rem 1.5rem;
+		font-size: 1.05rem;
+	}
+
+	.saved-notes h3 {
+		font-size: 1.5rem;
+		margin-top: 2.3rem;
+	}
+
+	.view {
+		font-size: 1.1rem;
+	}
+
+	i {
+		font-size: 1.4rem;
+	}
+
+	.note {
+		font-size: 0.9rem;
 	}
 }
