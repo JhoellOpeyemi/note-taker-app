@@ -8,6 +8,7 @@ const viewNotes = document.querySelector('p.view-all-notes a');
 document.addEventListener('DOMContentLoaded', getNotes);
 saveBtn.addEventListener('click', addNote);
 savedNote.addEventListener('click', deleteNote);
+savedNote.addEventListener('click', showSpecificNote);
 
 // Functions
 function addNote(event) {
@@ -78,6 +79,24 @@ function deleteNote(e) {
 
 	if (savedNote.children.length < 1) {
 		viewNotes.innerText = 'You Have No Saved Notes';
+	}
+}
+
+function showSpecificNote(e) {
+	const item = e.target;
+
+	// VIEW NOTE
+	const check = document.querySelector('a').classList.contains('view');
+	const viewSpecificNote = item.parentNode.previousSibling.firstElementChild;
+
+	if (check) {
+		viewSpecificNote.classList.toggle('open');
+	}
+
+	if (viewSpecificNote.classList[1] === 'open') {
+		item.innerText = 'Close';
+	} else {
+		item.innerText = 'View';
 	}
 }
 

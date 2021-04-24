@@ -19,7 +19,6 @@ body {
 		rgba(164, 27, 27, 1) 0%,
 		rgba(255, 129, 0, 1) 100%
 	);
-	overflow-x: hidden;
 }
 
 main {
@@ -33,7 +32,7 @@ main {
 	font-size: 4rem;
 	font-weight: 700;
 	color: #fff;
-	margin-bottom: 5rem;
+	margin-bottom: 3rem;
 }
 
 .grid {
@@ -139,19 +138,40 @@ main {
 	transition: all 500ms ease;
 }
 
-.saved-note-list .saved-note {
+.saved-note {
 	background-color: rgba(255, 255, 255, 0.68);
-	padding: 1rem;
+	padding: 2rem 2rem 1.4rem 2rem;
 	border-radius: 6px 6px 0 0;
 }
 
+.saved-note {
+	width: 100%;
+	position: relative;
+	white-space: nowrap;
+	line-break: strict;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .note {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 95%;
+	padding: 1rem;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	font-size: 1.7rem;
+	font-size: 1.4rem;
 	font-weight: 500;
+}
+
+.note.open {
+	position: relative;
+	overflow: visible;
+	white-space: normal;
+	padding: 0;
+	width: 100%;
 }
 
 .saved-note-list .buttons {
@@ -161,6 +181,7 @@ main {
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 0 0 6px 6px;
+	z-index: 2;
 }
 
 .view {
@@ -212,16 +233,11 @@ i {
 }
 
 /* Animation */
-.fall {
-	transform: translateY(8rem) rotateZ(20deg);
-	opacity: 0;
-	pointer-events: none;
-}
 
 @media screen and (max-width: 580px) {
 	.header {
 		font-size: 3.2rem;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 		text-align: center;
 	}
 
